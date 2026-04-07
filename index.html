@@ -48,14 +48,28 @@ body{font-family:Poppins,sans-serif;background:#000;color:#fff;overflow-x:hidden
   opacity:1;
 }
 
-.bg-video{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  z-index:-1;
-  opacity:.07;
-  filter:blur(3px) contrast(120%);
+.bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none; /* Empêche l'interaction avec la vidéo de fond */
+  opacity: .07;
+  filter: blur(3px) contrast(120%);
+}
+
+.video-container{
+  width:100%;
+  max-width:900px;
+  margin:40px auto;
+}
+
+.video-container iframe{
+  width:100%;
+  height:500px;
+  border:none;
+  border-radius:12px;
 }
 
 header{
@@ -160,9 +174,13 @@ footer{text-align:center;padding:40px;opacity:.4}
 
 <div id="loader">ENZO QUINONES</div>
 
-<video class="bg-video" autoplay muted loop>
-  <source src="background.mp4" type="video/mp4">
-</video>
+<iframe 
+  class="bg-video"
+  src="https://player.vimeo.com/video/1180982184?background=1&autoplay=1&loop=1&muted=1&autopause=0" 
+  frameborder="0" 
+  allow="autoplay; fullscreen" 
+  allowfullscreen>
+</iframe>
 
 <header>
   <h1>ENZO <span>QUINONES</span></h1>
@@ -171,9 +189,15 @@ footer{text-align:center;padding:40px;opacity:.4}
 
 <section class="showreel">
   <h2>SHOWREEL</h2>
-  <video autoplay muted loop controls>
-    <source src="Showreel.mp4" type="video/mp4">
-  </video>
+
+  <div class="video-container">
+    <iframe 
+      src="https://player.vimeo.com/video/1180982154"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
 </section>
 <section>
   <h2>À PROPOS</h2>
@@ -197,7 +221,7 @@ et participé à des programmes comme CapCut Pioneer et Filmora.
 	J'ai aussi la chance de travailler avec <a href="https://www.instagram.com/starbass/" target="_blank" class="inline-link">STARBASS ↗</a>
     </p>
 
-    <img src="screen.png" style="width:250px;border-radius:10px;margin-top:20px;">
+    <img src="screen.jpg" style="width:250px;border-radius:10px;margin-top:20px;">
 
   </div>
 </section>
