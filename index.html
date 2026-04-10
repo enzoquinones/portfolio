@@ -83,24 +83,29 @@
     opacity:1;
   }
 
-  .video-container{
-    width:100%;
-    max-width:900px;
-    margin:40px auto;
-  }
+.video-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center; /* Centre la vidéo horizontalement */
+}
 
-  .video-container iframe{
-    width:100%;
-    height:500px;
-    border:none;
-    border-radius:12px;
-  }
+.video-container video {
+  width: 100%;
+  max-height: 75vh; /* La vidéo ne dépassera jamais 75% de la hauteur de ton écran */
+  object-fit: contain; /* Garde la vidéo entière visible, sans zoomer ni couper */
+  border-radius: 12px;
+  outline: none;
+  background-color: #000; /* Ajoute des bandes noires propres sur les côtés si besoin */
+}
 
   /* Grille de liens */
   .links{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
+	margin-top: 40px;
   }
 
   .link-card{
@@ -169,18 +174,20 @@
 <header>
   <h1>ENZO <span>QUINONES</span></h1>
   <div class="subtitle">MONTEUR VIDÉO • VFX • EDITEUR</div>
+  <div class="subtitle">A.K.A NICANO</div>
 </header>
 
 <section class="showreel">
   <h2>SHOWREEL</h2>
 
-  <div class="video-container">
-    <iframe 
-      src="https://player.vimeo.com/video/1180982154"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
+<div class="video-container">
+  <video 
+    src="Showreel.mp4" 
+    controls 
+    playsinline
+    preload="metadata">
+  </video>
+</div>
 
 </section>
 <section>
@@ -193,17 +200,17 @@
 
     Sous le pseudo @lil.nzo, j’ai développé un compte à plus de 600K abonnés principalement aux États-Unis, générant plus de 100 millions de vues (cédé à un proche depuis janvier 2026).
 
-    J’ai aussi créé des templates CapCut utilisés par des créateurs et artistes comme 
+    Ainsi, des templates CapCut crés par mes soins ont été utilisés par des créateurs et artistes comme 
 
-<a href="https://www.tiktok.com/@nlethegreat1/video/7423070749310602526" target="_blank" class="inline-link">NLE Choppa ↗</a>
+<a href="https://www.tiktok.com/@nlethegreat1/video/7423070749310602526" target="_blank" class="inline-link">NLE Choppa ↗</a>.
 
-et participé à des programmes comme CapCut Pioneer et Filmora.
+J'ai pu travailler au sein de programmes comme CapCut Pioneer et Filmora.
 
-    Aujourd’hui, je me concentre sur les edits rap et les VFX pour les clips musicaux.
-	Je suis editeur et artiste VFX pour <a href="https://www.instagram.com/starbass/" target="_blank" class="inline-link">STARBASS ↗</a>
+    Aujourd’hui, je me concentre sur les VFX pour des clips musicaux (principalement rap).
+	J'ai aussi la chance d'etre editeur et artiste VFX pour le collectif <a href="https://www.instagram.com/starbass/" target="_blank" class="inline-link">STARBASS ↗</a>
     </p>
 
-    <img src="screen.jpg" class="about-img">
+    <img src="screen.jpg" class="about-img" style="display: none;">
 
   </div>
 </section>
@@ -211,22 +218,20 @@ et participé à des programmes comme CapCut Pioneer et Filmora.
 <section>
   <h2>MES COMPTES</h2>
   <div class="links">
+  
+	<a href="https://www.instagram.com/nicano.vfx/" target="_blank" class="link-card">
+      <h3>VFX Work</h3>
+      <p>Effets visuels pour des clips musicaux</p>
+    </a>
 
     <a href="https://www.tiktok.com/@63.nicano" target="_blank" class="link-card">
       <h3>Edits Rap</h3>
-      <p>Edits rap FR / contenus récents</p>
-    </a>
-
-    <a href="https://www.instagram.com/nicano.vfx/" target="_blank" class="link-card">
-      <h3>VFX Rap</h3>
-      <p>Effets visuels / clips / direction artistique</p>
-    </a>
-
-    
+      <p>Edits rap FR</p>
+    </a> 
 
     <a href="https://linktr.ee/nicano.qns" class="link-card">
       <h3>Socials</h3>
-      <p>Tous mes comptes (certains en développement)</p>
+      <p>Tous mes autres comptes</p>
     </a>
 
   </div>
