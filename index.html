@@ -133,7 +133,98 @@
   }
 
   footer{text-align:center;padding:40px;opacity:.4}
+/* --- DISPOSITION TEXTE / IMAGES --- */
+.about-text {
+  flex: 1; /* Prend la moitié de l'espace sur grand écran */
+  max-width: 600px;
+}
 
+.about-images {
+  flex: 1; /* Prend l'autre moitié de l'espace */
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  height: 350px; /* Donne une hauteur fixe pour que les images absolues aient de la place */
+}
+
+/* --- STYLE DES IMAGES DU COLLAGE --- */
+.about-images img {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9); /* Ombre prononcée pour détacher du fond */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, z-index 0s;
+  object-fit: cover;
+}
+
+/* Effet stylé : l'image passe au premier plan quand tu passes la souris dessus */
+.about-images img:hover {
+  transform: scale(1.05);
+  z-index: 10 !important;
+}
+
+/* --- DISPOSITION TEXTE / IMAGES --- */
+.about-text {
+  flex: 1; 
+  max-width: 600px;
+}
+
+.about-images {
+  flex: 1; 
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  min-height: 400px; /* J'ai augmenté la hauteur pour donner plus d'espace aux images */
+}
+
+/* --- STYLE DES IMAGES DU COLLAGE --- */
+.about-images img {
+  position: absolute;
+  border-radius: 4px; /* Bords très légèrement arrondis comme sur ta maquette */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Ombre pour détacher du fond */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Petit contour blanc transparent */
+  transition: transform 0.3s ease, z-index 0s;
+  object-fit: cover;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+  z-index: 10 !important;
+}
+
+/* --- PLACEMENT AU MILLIMÈTRE DES IMAGES --- */
+
+/* IMAGE 1 : L'oeil qui brille (En haut à gauche) */
+.img-1 {
+  width: 45%; 
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* IMAGE 2 : La voiture (En bas au centre) */
+.img-2 {
+  width: 45%;
+  bottom: -30px; /* Une valeur négative la fait descendre plus bas que le conteneur */
+  left: 25%;
+  z-index: 3; 
+}
+
+/* IMAGE 3 : Visage de droite (En haut à droite) */
+.img-3 {
+  width: 40%;
+  top: 30px; /* Légèrement plus basse que la première */
+  right: 0;
+  z-index: 2; /* Passe sous la voiture, mais au-dessus du fond */
+}
+
+/* --- CORRECTION POUR MOBILE --- */
+@media (max-width: 768px) {
+  .about-images {
+    min-height: 300px; 
+    margin-top: 40px;
+  }
+}
   /* RESPONSIVE DESKTOP & MOBILE */
   @media (min-width: 768px) {
     .about-container {
@@ -194,25 +285,26 @@
   <h2>À PROPOS</h2>
 
   <div class="about-container">
-    
+  
+  <div class="about-text">
     <p class="about">
       Je m'appelle Enzo Quinones, je monte des vidéos depuis 2020 et je suis actuellement en première année en école de montage vidéo/VFX chez MJM Graphic Design.
-
-    Sous le pseudo @lil.nzo, j’ai développé un compte à plus de 600K abonnés principalement aux États-Unis, générant plus de 100 millions de vues (cédé à un proche depuis janvier 2026).
-
-    Ainsi, des templates CapCut crés par mes soins ont été utilisés par des créateurs et artistes comme 
-
-<a href="https://www.tiktok.com/@nlethegreat1/video/7423070749310602526" target="_blank" class="inline-link">NLE Choppa ↗</a>.
-
-J'ai pu travailler au sein de programmes comme CapCut Pioneer et Filmora.
-
-    Aujourd’hui, je me concentre sur les VFX pour des clips musicaux (principalement rap).
-	J'ai aussi la chance d'etre editeur et artiste VFX pour le collectif <a href="https://www.instagram.com/starbass/" target="_blank" class="inline-link">STARBASS ↗</a>
+      <br><br>
+      Sous le pseudo @lil.nzo, j’ai développé un compte à plus de 600K abonnés principalement aux États-Unis, générant plus de 100 millions de vues (cédé à un proche depuis janvier 2026).
+      <br><br>
+      Ainsi, des templates CapCut crés par mes soins ont été utilisés par des créateurs et artistes comme <a href="https://www.tiktok.com/@nlethegreat1/video/7423070749310602526" target="_blank" class="inline-link">NLE Choppa ↗</a>. J'ai pu travailler au sein de programmes comme CapCut Pioneer et Filmora.
+      <br><br>
+      Aujourd’hui, je me concentre sur les VFX pour des clips musicaux (principalement rap). J'ai aussi la chance d'etre editeur et artiste VFX pour le collectif <a href="https://www.instagram.com/starbass/" target="_blank" class="inline-link">STARBASS ↗</a>
     </p>
-
-    <img src="screen.jpg" class="about-img" style="display: none;">
-
   </div>
+
+<div class="about-images">
+  <img src="pic1.png" alt="VFX Work 1" class="img-1">
+  <img src="pic2.png" alt="VFX Work 2" class="img-2">
+  <img src="pic3.png" alt="VFX Work 3" class="img-3">
+</div>
+
+</div>
 </section>
 
 <section>
