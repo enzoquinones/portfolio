@@ -220,29 +220,37 @@
 
 /* --- CORRECTION POUR MOBILE --- */
 @media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Force le texte puis les images en dessous */
+    gap: 20px;
+  }
+
   .about-images {
-    min-height: 220px; /* On réduit la hauteur du conteneur pour rapprocher les images */
-    margin-top: 40px;
-    margin-bottom: 30px; /* On ajoute un peu d'espace avant "MES COMPTES" */
+    position: relative;
+    display: flex; /* On change le mode d'affichage sur mobile */
+    flex-direction: column; /* On les aligne verticalement */
+    align-items: center;
+    min-height: auto; /* On enlève la hauteur fixe qui posait problème */
+    height: auto;
+    gap: 15px; /* Espace entre les images */
+    margin-top: 20px;
   }
 
-  /* On agrandit les images sur mobile et on les resserre */
-  .img-1 {
-    width: 65%; 
-    top: 0;
-    left: 0;
+  /* On annule le positionnement "absolute" qui fait que les images flottent partout */
+  .about-images img {
+    position: static; 
+    width: 100%; 
+    max-width: 300px; /* Taille max pour ne pas que ce soit géant */
+    transform: none !important; /* On enlève les rotations/décalages du PC */
+    margin: 0 auto;
   }
 
-  .img-2 {
-    width: 65%;
-    bottom: -10px; /* On la remonte un peu par rapport au PC */
-    left: 20%;
-  }
-
-  .img-3 {
-    width: 55%;
-    top: 30px;
-    right: 0;
+  /* On reset les placements spécifiques du PC */
+  .img-1, .img-2, .img-3 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
   }
 }
   /* RESPONSIVE DESKTOP & MOBILE */
